@@ -18,7 +18,7 @@ module BrDanfe
         @document.send(method_name, *args, &block)
       end
 
-      def box(height:, pad:5, &block)
+      def box(height: nil, pad:5, &block)
         bounding_box([0, cursor], width: page_width, height: height) do
           pad(pad) { indent(pad) { yield if block_given? } }
           stroke_bounds
